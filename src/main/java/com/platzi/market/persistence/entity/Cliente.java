@@ -1,14 +1,15 @@
 package com.platzi.market.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "clientes")
 public class Cliente {
 
+    /**
+     * Declaración de variables
+     */
     @Id
     private String id;
     private String nombre;
@@ -19,6 +20,15 @@ public class Cliente {
     @Column(name = "correo_electronico")
     private String correoElectronico;
 
+    /**
+     * Declaración de relaciones
+     */
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compras;
+
+    /**
+     * Getters and Setters
+     */
     public String getId() {
         return id;
     }

@@ -6,6 +6,9 @@ import javax.persistence.*;
 @Table(name = "productos")
 public class Producto {
 
+    /**
+     * Declaración de variables
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
@@ -27,6 +30,16 @@ public class Producto {
 
     private Boolean estado;
 
+    /**
+     * Declaración de relaciones
+     */
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
+    /**
+     * Getters and Setters
+     */
     public Integer getIdProducto() {
         return idProducto;
     }
