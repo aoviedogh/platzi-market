@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.platzi'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 sourceCompatibility = '11'
 
 repositories {
@@ -16,23 +16,29 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
-	//MapStruct
+	//****************** INI MapStruct ******************
 	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+	//****************** FIN MapStruct ******************
 
-	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
-	implementation 'io.springfox:springfox-swagger2:2.10.5'
-	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
-	implementation 'io.springfox:springfox-swagger-ui:2.10.5'
+	//****************** INI Swagger ******************
+	//implementation 'io.springfox:springfox-swagger2:2.10.5'
+	//implementation 'io.springfox:springfox-swagger-ui:2.10.5'
+
+	implementation 'io.springfox:springfox-swagger2:2.10.0'
+	implementation 'io.springfox:springfox-swagger-ui:2.10.0'
 	//implementation "io.springfox:springfox-boot-starter:3.0.0" compile "io.springfox:springfox-swagger-ui:3.0.0"
 
-	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
-	implementation 'org.springdoc:springdoc-openapi-ui:1.6.6'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.6' //Otro api para usar Swagger
+	//****************** FIN Swagger ******************
 
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	//****************** INI Spring Boot Secutiry ******************
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	//****************** FIN Spring Boot Secutiry ******************
 
+	//****************** INI Json Web Token ******************
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	//****************** FIN Json Web Token ******************
 
 	runtimeOnly 'org.postgresql:postgresql'
 

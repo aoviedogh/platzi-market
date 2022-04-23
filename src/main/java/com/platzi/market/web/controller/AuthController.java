@@ -32,8 +32,8 @@ public class AuthController {
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> createToken(@RequestBody AuthenticationRequest authenticationRequest) {
         try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),
-                    authenticationRequest.getPassword()));
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+                    authenticationRequest.getUsername(), authenticationRequest.getPassword()));
             UserDetails userDetails = platziUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
             String jwt = jwtUtil.generateToken(userDetails);
 
